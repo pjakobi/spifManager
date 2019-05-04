@@ -43,7 +43,7 @@ def error(errorLabel):
 
 def debug(debugLabel):
 	if not _debug: return
-	print "{prefix} info: {label}".format(prefix=_progName, label=debugLabel)
+	print ("{prefix} info: {label}".format(prefix=_progName, label=debugLabel))
 	
 
 #
@@ -175,12 +175,10 @@ class SpifMgr(QtWidgets.QMainWindow):
         self.center()
         self.show()
         
-	def showGeneralInfo():
-		"""
-			Show the SPIF general information (file name, object id, label)
-		"""
-		label = QtWidgets.QLabel()
-		label.setText("Toto")
+    def showGeneralInfo():
+        """ Show the SPIF general information (file name, object id, label) """
+        label = QtWidgets.QLabel()
+        label.setText("Toto")
 		
     def notepad_ui(self):
 
@@ -298,7 +296,7 @@ class SpifMgr(QtWidgets.QMainWindow):
 
     def assign_syntax_py(self):
 #        self.syntax = PythonHighlighter(self.text_widget.document())
-		self.update_statusbar()
+        self.update_statusbar()
 
     def get_cursor_position(self):
         """ Get Row and Column of actual text cursor """
@@ -770,12 +768,12 @@ class SpifMgr(QtWidgets.QMainWindow):
         error_message.exec_()
 
 def usage():
-    print os.path.basename(_progName) + ":"
-    print "    " + "-h or --help : this message"
-    print "    " + "-d or --debug: debug mode"
-    print "    " + "-v or --verbose: verbose mode (same as debug)"
-    print "    " + "-f or --file <filename>"
-    print "    " + "-s or --spif <filename>"
+    print (os.path.basename(_progName) + ":")
+    print ("    " + "-h or --help : this message")
+    print ("    " + "-d or --debug: debug mode")
+    print ("    " + "-v or --verbose: verbose mode (same as debug)")
+    print ("    " + "-f or --file <filename>")
+    print ("    " + "-s or --spif <filename>")
 
 
 
